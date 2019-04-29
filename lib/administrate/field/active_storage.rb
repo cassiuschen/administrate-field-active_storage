@@ -39,11 +39,13 @@ module Administrate
       end
 
       def url(attachment)
-        Rails.application.routes.url_helpers.rails_blob_path(attachment, only_path: true)
+        #Rails.application.routes.url_helpers.rails_blob_path(attachment, only_path: true)
+        attachment.service_url
       end
       
       def blob_url(attachment)
-        Rails.application.routes.url_helpers.rails_blob_path(attachment, disposition: :attachment, only_path: true)
+        #Rails.application.routes.url_helpers.rails_blob_path(attachment, disposition: :attachment, only_path: true)
+        attachment.service_url
       end
 
       def destroy_path(field, attachment)
